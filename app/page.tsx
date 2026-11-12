@@ -335,7 +335,8 @@ export default function Portfolio() {
           )}
           <a
             href="/resume.pdf"
-            download="Karan_M_Resume.pdf"
+            target="_blank"
+            rel="noreferrer"
             className="px-3 py-1.5 rounded-lg bg-white/[0.06] border border-white/10 text-white hover:border-[#00F0FF]/50 hover:text-[#00F0FF] transition-all flex items-center gap-1.5 hidden md:flex"
           >
             <ExternalLink className="w-3.5 h-3.5 text-[#00F0FF]" />
@@ -388,10 +389,11 @@ export default function Portfolio() {
               </a>
               <a
                 href="/resume.pdf"
-                download="Karan_M_Resume.pdf"
+                target="_blank"
+                rel="noreferrer"
                 className={`${GLASS} px-7 py-3.5 rounded-xl text-white hover:border-[#00F0FF] hover:text-[#00F0FF] transition-all hover:scale-[1.02] flex items-center gap-2`}
               >
-                <ExternalLink className="w-4 h-4" /> Download Resume
+                <ExternalLink className="w-4 h-4" /> View Resume
               </a>
               <a
                 href="#contact"
