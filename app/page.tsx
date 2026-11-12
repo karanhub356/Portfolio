@@ -420,7 +420,7 @@ export default function Portfolio() {
                   <span className="w-3 h-3 rounded-full bg-amber-400/80" />
                   <span className="w-3 h-3 rounded-full bg-emerald-400/80" />
                 </div>
-                <span className="font-mono text-[11px] text-[#8B8B98]">karan@skcet-ai:~</span>
+                <span className="font-mono text-[11px] text-[#8B8B98]">karan@skcet-AI&DS:~</span>
               </div>
 
               {/* Interactive Command Switcher */}
