@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Terminal, Mail, ExternalLink, GitBranch, Share2, Sparkles } from "lucide-react";
-
+import { motion, MotionConfig } from "motion/react";
 const LINKS = {
   email: "mailto:mkaran030506@gmail.com",
   github: "https://github.com/karanhub356",
@@ -164,9 +164,16 @@ export default function Portfolio() {
         <section id="projects" className="py-20 border-t border-white/10">
           <h2 className="text-2xl md:text-4xl font-bold text-white mb-10">Projects</h2>
           <div className="grid md:grid-cols-2 gap-8">
-            {PROJECTS.map((p) => (
-              <div key={p.title} className={`${GLASS} rounded-3xl p-7 flex flex-col justify-between hover:border-white/30 transition-colors`}>
-                <div>
+            {PROJECTS.map((p, i) => (
+<motion.div
+  key={p.title}
+  initial={{ opacity: 0, y: 28 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, margin: "-60px" }}
+  whileHover={{ y: -8 }}
+  transition={{ type: "spring", stiffness: 240, damping: 22, delay: (i % 2) * 0.08 }}
+  className={`${GLASS} rounded-3xl p-7 flex flex-col justify-between hover:border-white/30 transition-colors`}
+>                <div>
                   <div className="flex justify-between items-start font-mono text-xs text-[#71717A] mb-4">
                     <span>{p.kind}</span>
                     <span className="px-2.5 py-0.5 rounded-full border" style={{ color: p.color, borderColor: `${p.color}55`, background: `${p.color}18` }}>{p.badge}</span>
@@ -184,7 +191,7 @@ export default function Portfolio() {
                     </a>
                   )}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </section>
