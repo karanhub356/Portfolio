@@ -1,15 +1,8 @@
 import type { NextConfig } from "next";
 
-
 const nextConfig: NextConfig = {
-  /* config options here */
-  experimental: {
-    agentFeedback: true,
-  },
   output: "export",
   images: { unoptimized: true },
-  cacheComponents: true,
-  partialPrefetching: true,
   turbopack: {
     rules: {
       "*.css": {
@@ -21,4 +14,3 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
-
