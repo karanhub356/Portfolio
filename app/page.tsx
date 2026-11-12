@@ -73,7 +73,7 @@ const PROJECTS = [
     title: "Hall Booking System",
     desc: "Web app for scheduling and managing hall bookings, with booking-conflict handling and structured request state.",
     stack: ["React", "JavaScript"],
-    url: "https://github.com/karanhub356/hallbookinSystem_app.",
+    url: "https://github.com/karanhub356/hallbookinSystem_app",
   },
 ];
 
@@ -232,6 +232,7 @@ export default function Portfolio() {
   const [activeTab, setActiveTab] = useState(0);
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 140, damping: 24, restDelta: 0.001 });
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-[#050711] text-[#D4D4D8] font-sans selection:bg-[#00F0FF] selection:text-black relative overflow-hidden">
@@ -285,6 +286,53 @@ export default function Portfolio() {
               </a>
             ))}
           </nav>
+          <div className="md:hidden">
+            <button
+              className="hamburger cursor-pointer transition-all"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              <span className="hamburger-icon w-6 h-6 border-t border-b border-gray-600 block" />
+              <span className="hamburger-icon w-6 h-6 border-t border-b border-gray-600 block absolute top-[-6px] left-0" />
+              <span className="hamburger-icon w-6 h-6 border-t border-b border-gray-600 block absolute top-0 left-0" />
+            </button>
+          </div>
+          {mobileMenuOpen && (
+            <nav className="fixed inset-0 bg-[#050711] z-40 flex items-center justify-center pt-24">
+              <div className={`${GLASS} rounded-3xl p-8 max-w-md w-full mx-auto text-center`}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  className="absolute top-4 right-4 text-gray-400 hover:text-[#00F0FF] transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <svg
+                    className="w-6 h-6"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path d="M18 6L6 18M6 6l12 12" />
+                  </svg>
+                </button>
+                <ul className="mt-8 space-y-4">
+                  {[
+                    ["#about", "About"],
+                    ["#projects", "Projects"],
+                    ["#experience", "Experience"],
+                    ["#contact", "Contact"],
+                  ].map(([href, label]) => (
+                    <li key={label}>
+                      <a
+                        href={href}
+                        className="text-white text-lg font-medium hover:text-[#00F0FF] transition-colors"
+                      >
+                        {label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </nav>
+          )}
           <a
             href={LINKS.github}
             target="_blank"
@@ -312,14 +360,11 @@ export default function Portfolio() {
             </div>
 
             <h1 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-[1.08] mb-6">
-              Machine learning that{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F0FF] via-[#A855F7] to-[#EC4899]">
-                explains itself
-              </span>
-              ,
-              <br />
-              built on solid engineering.
+              Machine learning that explains itself
             </h1>
+            <p className="text-lg text-[#A1A1AA] leading-relaxed mb-10">
+              Built on solid engineering.
+            </p>
 
             <p className="max-w-xl text-lg text-[#A1A1AA] leading-relaxed mb-10">
               B.Tech graduate in Artificial Intelligence & Data Science (SKCET, 2026). I build ML systems with
@@ -358,7 +403,7 @@ export default function Portfolio() {
                   <span className="w-3 h-3 rounded-full bg-amber-400/80" />
                   <span className="w-3 h-3 rounded-full bg-emerald-400/80" />
                 </div>
-                <span className="font-mono text-[11px] text-[#71717A]">karan@skcet-ai:~</span>
+                <span className="font-mono text-[11px] text-[#8B8B98]">karan@skcet-ai:~</span>
               </div>
 
               {/* Interactive Command Switcher */}
@@ -381,7 +426,7 @@ export default function Portfolio() {
 
               {/* Live Output Body */}
               <div className="p-6 font-mono text-xs space-y-3.5 min-h-[225px]">
-                <div className="text-[#71717A] flex items-center gap-2">
+                <div className="text-[#8B8B98] flex items-center gap-2">
                   <span className="text-[#00F0FF]">$</span>
                   <span className="text-white">{TERMINAL_TABS[activeTab].cmd}</span>
                 </div>
@@ -394,7 +439,7 @@ export default function Portfolio() {
                 >
                   {TERMINAL_TABS[activeTab].output.map((row) => (
                     <div key={row.label} className="border-l-2 border-white/10 pl-3">
-                      <div className="text-[10px] text-[#71717A] tracking-wider">{row.label}</div>
+                      <div className="text-[10px] text-[#8B8B98] tracking-wider">{row.label}</div>
                       <div className="text-[#E4E4E7] mt-0.5 leading-snug">{row.val}</div>
                     </div>
                   ))}
@@ -424,9 +469,9 @@ export default function Portfolio() {
               <div className="pt-4 grid sm:grid-cols-2 gap-4">
                 {SKILLS.map(([group, items]) => (
                   <div key={group} className={`${GLASS} p-4 rounded-2xl`}>
-                    <h4 className="font-mono text-xs text-[#00F0FF] mb-3 flex items-center gap-1.5">
+                    <h3 className="font-mono text-xs text-[#00F0FF] mb-3 flex items-center gap-1.5">
                       <Cpu className="w-3.5 h-3.5" /> {group}
-                    </h4>
+                    </h3>
                     <div className="flex flex-wrap gap-1.5 font-mono text-xs">
                       {items.map((s) => (
                         <span
@@ -455,7 +500,7 @@ export default function Portfolio() {
                   ["Credentials", "Google Cloud Gen AI Leader · Anthropic MCP"],
                 ].map(([k, v]) => (
                   <div key={k}>
-                    <div className="text-[#71717A] mb-1">{k}</div>
+                    <div className="text-[#8B8B98] mb-1">{k}</div>
                     <div className="text-white font-semibold leading-relaxed">{v}</div>
                   </div>
                 ))}
@@ -488,7 +533,7 @@ export default function Portfolio() {
                 className="group rounded-3xl p-7 hover:border-white/30 transition-colors cursor-pointer"
               >
                 <div>
-                  <div className="flex justify-between items-center font-mono text-xs text-[#71717A] mb-4">
+                  <div className="flex justify-between items-center font-mono text-xs text-[#8B8B98] mb-4">
                     <span>{p.kind}</span>
                     <span
                       className="px-2.5 py-0.5 rounded-full border font-semibold"
@@ -502,7 +547,7 @@ export default function Portfolio() {
                     <h3 className="text-xl font-bold text-white group-hover:text-[#00F0FF] transition-colors">
                       {p.title}
                     </h3>
-                    <ArrowUpRight className="w-5 h-5 text-[#71717A] group-hover:text-[#00F0FF] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0 mt-1" />
+                    <ArrowUpRight className="w-5 h-5 text-[#8B8B98] group-hover:text-[#00F0FF] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0 mt-1" />
                   </div>
 
                   <div className="font-mono text-[11px] text-[#94A3B8] mb-4">{p.metric}</div>
@@ -590,10 +635,10 @@ export default function Portfolio() {
                     </div>
                     <div>
                       <div className="text-white font-bold group-hover:text-[#00F0FF] transition-colors">{label}</div>
-                      <div className="text-[#71717A] text-[11px] mt-0.5">{sub}</div>
+                      <div className="text-[#8B8B98] text-[11px] mt-0.5">{sub}</div>
                     </div>
                   </div>
-                  <ArrowUpRight className="w-4 h-4 text-[#71717A] group-hover:text-[#00F0FF] transition-colors" />
+                  <ArrowUpRight className="w-4 h-4 text-[#8B8B98] group-hover:text-[#00F0FF] transition-colors" />
                 </div>
               </SpotlightCard>
             ))}
@@ -601,7 +646,7 @@ export default function Portfolio() {
         </section>
       </main>
 
-      <footer className="border-t border-white/10 py-8 text-center font-mono text-xs text-[#71717A] relative z-10">
+      <footer className="border-t border-white/10 py-8 text-center font-mono text-xs text-[#8B8B98] relative z-10">
         <p>© 2026 Karan M · Built with Next.js & Tailwind CSS</p>
       </footer>
     </div>
