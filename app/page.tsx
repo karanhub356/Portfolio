@@ -334,6 +334,14 @@ export default function Portfolio() {
             </nav>
           )}
           <a
+            href="/resume.pdf"
+            download="Karan_M_Resume.pdf"
+            className="px-3 py-1.5 rounded-lg bg-white/[0.06] border border-white/10 text-white hover:border-[#00F0FF]/50 hover:text-[#00F0FF] transition-all flex items-center gap-1.5 hidden md:flex"
+          >
+            <ExternalLink className="w-3.5 h-3.5 text-[#00F0FF]" />
+            <span>Resume</span>
+          </a>
+          <a
             href={LINKS.github}
             target="_blank"
             rel="noreferrer"
@@ -377,6 +385,13 @@ export default function Portfolio() {
                 className="px-7 py-3.5 bg-gradient-to-r from-[#00F0FF] to-[#0088FF] text-black font-bold rounded-xl hover:shadow-[0_0_30px_rgba(0,240,255,0.45)] transition-all hover:scale-[1.02] flex items-center gap-2"
               >
                 <Terminal className="w-4 h-4" /> View projects
+              </a>
+              <a
+                href="/resume.pdf"
+                download="Karan_M_Resume.pdf"
+                className={`${GLASS} px-7 py-3.5 rounded-xl text-white hover:border-[#00F0FF] hover:text-[#00F0FF] transition-all hover:scale-[1.02] flex items-center gap-2`}
+              >
+                <ExternalLink className="w-4 h-4" /> Download Resume
               </a>
               <a
                 href="#contact"
