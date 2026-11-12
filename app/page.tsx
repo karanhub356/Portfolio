@@ -1,8 +1,9 @@
 "use client";
 
 import React from "react";
-import { Terminal, Mail, ExternalLink, GitBranch, Share2, Sparkles } from "lucide-react";
-import { motion, MotionConfig } from "motion/react";
+import { Terminal, Mail, ExternalLink, GitBranch, Share2, Sparkles, ArrowUpRight } from "lucide-react";
+import { motion } from "motion/react";
+
 const LINKS = {
   email: "mailto:mkaran030506@gmail.com",
   github: "https://github.com/karanhub356",
@@ -12,38 +13,52 @@ const LINKS = {
 const GLASS =
   "backdrop-blur-2xl bg-white/[0.03] border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]";
 
-// Add a repo URL to any project and a GitHub link appears on its card.
+// Replace the `url` values with each project's live demo or exact GitHub repo link.
 const PROJECTS = [
   {
-    kind: "NLP / DASHBOARD", badge: "SBERT", color: "#00F0FF",
+    kind: "NLP / DASHBOARD",
+    badge: "SBERT",
+    color: "#00F0FF",
     title: "AI-Powered Resume Screener",
     desc: "Ranks resumes against a job description using Sentence-BERT similarity and a weighted score across semantic match, skills, experience and education. Streamlit dashboard with radar charts and a skill-gap heatmap.",
-    stack: ["Python", "SBERT", "NLP", "Streamlit"], repo: "",
+    stack: ["Python", "SBERT", "NLP", "Streamlit"],
+    url: "https://github.com/karanhub356/ai-resume-screener", // Replace with specific repo/demo URL
   },
   {
-    kind: "ML RESEARCH", badge: "ICCET 2026", color: "#A855F7",
+    kind: "ML RESEARCH",
+    badge: "ICCET 2026",
+    color: "#A855F7",
     title: "Crop Recommendation with Explainable AI",
     desc: "Compares six ML models with GridSearchCV and cross-validation (Random Forest performs best) on 2,200 samples and 7 soil and climate features. Returns Top-3 crops and uses DiCE counterfactuals to show what would change the ranking.",
-    stack: ["Python", "scikit-learn", "DiCE", "XAI"], repo: "",
+    stack: ["Python", "scikit-learn", "DiCE", "XAI"],
+    url: "https://github.com/karanhub356/ensemble_AI-crop", // Replace with specific repo/paper URL
   },
- 
   {
-    kind: "OOP + SQL", badge: "SQLITE", color: "#A855F7",
+    kind: "OOP + SQL",
+    badge: "SQLITE",
+    color: "#A855F7",
     title: "Fleet Service Management System",
     desc: "Models vehicle service lifecycles with abstract base classes, inheritance and a Strategy pattern for service-tier pricing. Normalized SQLite schema with CTE queries for overdue vehicles and technician workload.",
-    stack: ["Python", "SQLite", "Design Patterns"], repo: "",
+    stack: ["Python", "SQLite", "Design Patterns"],
+    url: "https://github.com/karanhub356/fleet-service-management", // Replace with specific repo URL
   },
   {
-    kind: "FRONTEND", badge: "REACT", color: "#EC4899",
+    kind: "FRONTEND",
+    badge: "REACT",
+    color: "#EC4899",
     title: "React Authentication System",
     desc: "Client-side auth with Context API for global state, protected routes and local JSON-backed sessions. No Redux, no external backend.",
-    stack: ["React", "Context API", "JavaScript"], repo: "",
+    stack: ["React", "Context API", "JavaScript"],
+    url: "https://github.com/karanhub356/react-auth-system", // Replace with specific repo/demo URL
   },
   {
-    kind: "WEB APP", badge: "REACT", color: "#00F0FF",
+    kind: "WEB APP",
+    badge: "REACT",
+    color: "#00F0FF",
     title: "Hall Booking System",
     desc: "Web app for scheduling and managing hall bookings, with booking-conflict handling and structured request state.",
-    stack: ["React", "JavaScript"], repo: "",
+    stack: ["React", "JavaScript"],
+    url: "https://github.com/karanhub356/hallbookinSystem_app./tree/main/src", // Replace with specific repo/demo URL
   },
 ];
 
@@ -63,12 +78,24 @@ const CERTS = [
 ];
 
 const TIMELINE = [
-  { when: "2026", color: "#00F0FF", title: "B.Tech Graduate & ICCET 2026 Paper",
-    body: "Graduated in AI & Data Science. Paper on a crop recommendation framework at ICCET 2026. Completed Google Cloud Gen AI Leader and Anthropic MCP credentials." },
-  { when: "Jun – Jul 2024", color: "#A855F7", title: "Data Science & Analytics Intern, Coimbatore Institute of Technology",
-    body: "Applied preprocessing, exploratory data analysis and predictive modelling on structured datasets using Python and pandas." },
-  { when: "2022 – 2026", color: "#EC4899", title: "B.Tech, Artificial Intelligence & Data Science",
-    body: "Sri Krishna College of Engineering and Technology (SKCET), Coimbatore." },
+  {
+    when: "2026",
+    color: "#00F0FF",
+    title: "B.Tech Graduate & ICCET 2026 Paper",
+    body: "Graduated in AI & Data Science. Paper on a crop recommendation framework at ICCET 2026. Completed Google Cloud Gen AI Leader and Anthropic MCP credentials.",
+  },
+  {
+    when: "Jun – Jul 2024",
+    color: "#A855F7",
+    title: "Data Science & Analytics Intern, Coimbatore Institute of Technology",
+    body: "Applied preprocessing, exploratory data analysis and predictive modelling on structured datasets using Python and pandas.",
+  },
+  {
+    when: "2022 – 2026",
+    color: "#EC4899",
+    title: "B.Tech, Artificial Intelligence & Data Science",
+    body: "Sri Krishna College of Engineering and Technology (SKCET), Coimbatore.",
+  },
 ];
 
 const CONTACTS = [
@@ -86,10 +113,19 @@ export default function Portfolio() {
 
       <header className="sticky top-4 z-50 max-w-6xl mx-auto px-4">
         <div className={`${GLASS} rounded-2xl px-6 h-16 flex items-center justify-between font-mono text-xs`}>
-          <a href="#hero" className="font-bold text-white tracking-wider hover:text-[#00F0FF] transition-colors">KARAN M</a>
+          <a href="#hero" className="font-bold text-white tracking-wider hover:text-[#00F0FF] transition-colors">
+            KARAN M
+          </a>
           <nav className="hidden md:flex items-center gap-8 text-[#94A3B8]">
-            {[["about", "About"], ["projects", "Projects"], ["experience", "Experience"], ["contact", "Contact"]].map(([id, label]) => (
-              <a key={id} href={`#${id}`} className="hover:text-[#00F0FF] transition-colors">{label}</a>
+            {[
+              ["about", "About"],
+              ["projects", "Projects"],
+              ["experience", "Experience"],
+              ["contact", "Contact"],
+            ].map(([id, label]) => (
+              <a key={id} href={`#${id}`} className="hover:text-[#00F0FF] transition-colors">
+                {label}
+              </a>
             ))}
           </nav>
         </div>
@@ -103,18 +139,28 @@ export default function Portfolio() {
           </div>
           <h1 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-[1.1] mb-6">
             Machine learning that{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F0FF] via-[#A855F7] to-[#EC4899]">explains itself</span>,
-            <br />built on solid engineering.
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F0FF] via-[#A855F7] to-[#EC4899]">
+              explains itself
+            </span>
+            ,
+            <br />
+            built on solid engineering.
           </h1>
           <p className="max-w-2xl text-lg text-[#A1A1AA] leading-relaxed mb-10">
-            B.Tech graduate in Artificial Intelligence & Data Science (SKCET, 2026). I build ML systems with explainability and fairness
-            checks, backed by OOP, SQL and React fundamentals.
+            B.Tech graduate in Artificial Intelligence & Data Science (SKCET, 2026). I build ML systems with
+            explainability and fairness checks, backed by OOP, SQL and React fundamentals.
           </p>
           <div className="flex flex-wrap gap-4 font-mono text-sm">
-            <a href="#projects" className="px-7 py-3.5 bg-gradient-to-r from-[#00F0FF] to-[#0088FF] text-black font-bold rounded-xl hover:shadow-[0_0_30px_rgba(0,240,255,0.5)] transition-all flex items-center gap-2">
+            <a
+              href="#projects"
+              className="px-7 py-3.5 bg-gradient-to-r from-[#00F0FF] to-[#0088FF] text-black font-bold rounded-xl hover:shadow-[0_0_30px_rgba(0,240,255,0.5)] transition-all flex items-center gap-2"
+            >
               <Terminal className="w-4 h-4" /> View projects
             </a>
-            <a href="#contact" className={`${GLASS} px-7 py-3.5 rounded-xl text-white hover:border-[#00F0FF] hover:text-[#00F0FF] transition-all flex items-center gap-2`}>
+            <a
+              href="#contact"
+              className={`${GLASS} px-7 py-3.5 rounded-xl text-white hover:border-[#00F0FF] hover:text-[#00F0FF] transition-all flex items-center gap-2`}
+            >
               <Mail className="w-4 h-4" /> Get in touch
             </a>
           </div>
@@ -125,12 +171,13 @@ export default function Portfolio() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="md:col-span-2 space-y-5 text-[#A1A1AA] leading-relaxed">
               <p>
-                My projects share one theme: models should be able to justify their output. I have built explainable crop recommendations
-                (DiCE counterfactuals), fairness-audited prediction pipelines, and a semantic resume screener with a recruiter-readable dashboard.
+                My projects share one theme: models should be able to justify their output. I have built explainable
+                crop recommendations (DiCE counterfactuals), fairness-audited prediction pipelines, and a semantic resume
+                screener with a recruiter-readable dashboard.
               </p>
               <p>
-                Alongside ML, I work on the engineering side: object-oriented design with design patterns, normalized SQL schemas, and
-                React front ends. My crop recommendation paper was presented at ICCET 2026.
+                Alongside ML, I work on the engineering side: object-oriented design with design patterns, normalized
+                SQL schemas, and React front ends. My crop recommendation paper was presented at ICCET 2026.
               </p>
               <div className="pt-4 space-y-4">
                 {SKILLS.map(([group, items]) => (
@@ -138,7 +185,12 @@ export default function Portfolio() {
                     <h4 className="font-mono text-xs text-white mb-2">{group}</h4>
                     <div className="flex flex-wrap gap-2 font-mono text-xs">
                       {items.map((s) => (
-                        <span key={s} className="px-3 py-1.5 bg-white/[0.05] border border-white/10 rounded-xl text-[#E4E4E7]">{s}</span>
+                        <span
+                          key={s}
+                          className="px-3 py-1.5 bg-white/[0.05] border border-white/10 rounded-xl text-[#E4E4E7]"
+                        >
+                          {s}
+                        </span>
                       ))}
                     </div>
                   </div>
@@ -162,36 +214,55 @@ export default function Portfolio() {
         </section>
 
         <section id="projects" className="py-20 border-t border-white/10">
-          <h2 className="text-2xl md:text-4xl font-bold text-white mb-10">Projects</h2>
+          <div className="flex items-end justify-between mb-10">
+            <h2 className="text-2xl md:text-4xl font-bold text-white">Projects</h2>
+            <span className="font-mono text-xs text-[#71717A]">Click any card to open ↗</span>
+          </div>
           <div className="grid md:grid-cols-2 gap-8">
             {PROJECTS.map((p, i) => (
-<motion.div
-  key={p.title}
-  initial={{ opacity: 0, y: 28 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true, margin: "-60px" }}
-  whileHover={{ y: -8 }}
-  transition={{ type: "spring", stiffness: 240, damping: 22, delay: (i % 2) * 0.08 }}
-  className={`${GLASS} rounded-3xl p-7 flex flex-col justify-between hover:border-white/30 transition-colors`}
->                <div>
+              <motion.a
+                key={p.title}
+                href={p.url}
+                target="_blank"
+                rel="noreferrer"
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                whileHover={{ y: -8 }}
+                transition={{ type: "spring", stiffness: 240, damping: 22, delay: (i % 2) * 0.08 }}
+                className={`${GLASS} group rounded-3xl p-7 flex flex-col justify-between hover:border-[#00F0FF]/50 transition-colors cursor-pointer`}
+              >
+                <div>
                   <div className="flex justify-between items-start font-mono text-xs text-[#71717A] mb-4">
                     <span>{p.kind}</span>
-                    <span className="px-2.5 py-0.5 rounded-full border" style={{ color: p.color, borderColor: `${p.color}55`, background: `${p.color}18` }}>{p.badge}</span>
+                    <span
+                      className="px-2.5 py-0.5 rounded-full border"
+                      style={{ color: p.color, borderColor: `${p.color}55`, background: `${p.color}18` }}
+                    >
+                      {p.badge}
+                    </span>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{p.title}</h3>
+                  <div className="flex items-start justify-between gap-3 mb-3">
+                    <h3 className="text-xl font-bold text-white group-hover:text-[#00F0FF] transition-colors">
+                      {p.title}
+                    </h3>
+                    <ArrowUpRight className="w-5 h-5 text-[#71717A] group-hover:text-[#00F0FF] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0 mt-1" />
+                  </div>
                   <p className="text-sm text-[#A1A1AA] mb-6 leading-relaxed">{p.desc}</p>
                 </div>
-                <div>
+                <div className="flex items-center justify-between gap-4 pt-2">
                   <div className="flex flex-wrap gap-2 font-mono text-xs text-[#A1A1AA]">
-                    {p.stack.map((s) => <span key={s} className="px-2 py-1 bg-white/5 rounded-md">{s}</span>)}
+                    {p.stack.map((s) => (
+                      <span key={s} className="px-2 py-1 bg-white/5 rounded-md">
+                        {s}
+                      </span>
+                    ))}
                   </div>
-                  {p.repo && (
-                    <a href={p.repo} target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-1.5 font-mono text-xs text-white hover:text-[#00F0FF] transition-colors">
-                      <ExternalLink className="w-3.5 h-3.5" /> View code
-                    </a>
-                  )}
+                  <span className="inline-flex items-center gap-1 font-mono text-xs text-[#71717A] group-hover:text-white transition-colors shrink-0">
+                    <ExternalLink className="w-3.5 h-3.5" /> Open
+                  </span>
                 </div>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
         </section>
@@ -200,8 +271,14 @@ export default function Portfolio() {
           <h2 className="text-2xl md:text-4xl font-bold text-white mb-12">Experience & education</h2>
           <div className="space-y-6">
             {TIMELINE.map((t) => (
-              <div key={t.title} className="backdrop-blur-xl bg-white/[0.02] border border-white/10 rounded-2xl p-6 border-l-4" style={{ borderLeftColor: t.color }}>
-                <div className="font-mono text-xs font-bold mb-1" style={{ color: t.color }}>{t.when}</div>
+              <div
+                key={t.title}
+                className="backdrop-blur-xl bg-white/[0.02] border border-white/10 rounded-2xl p-6 border-l-4"
+                style={{ borderLeftColor: t.color }}
+              >
+                <div className="font-mono text-xs font-bold mb-1" style={{ color: t.color }}>
+                  {t.when}
+                </div>
                 <h3 className="text-lg font-bold text-white">{t.title}</h3>
                 <p className="text-sm text-[#A1A1AA] mt-2 leading-relaxed">{t.body}</p>
               </div>
@@ -209,17 +286,28 @@ export default function Portfolio() {
           </div>
           <h3 className="font-mono text-xs text-white mt-12 mb-4">Certifications</h3>
           <div className="flex flex-wrap gap-2.5 font-mono text-xs">
-            {CERTS.map((c) => <span key={c} className="px-3.5 py-1.5 bg-white/[0.05] border border-white/10 rounded-xl text-[#E4E4E7]">{c}</span>)}
+            {CERTS.map((c) => (
+              <span key={c} className="px-3.5 py-1.5 bg-white/[0.05] border border-white/10 rounded-xl text-[#E4E4E7]">
+                {c}
+              </span>
+            ))}
           </div>
         </section>
 
         <section id="contact" className="py-20 border-t border-white/10">
           <h2 className="text-2xl md:text-4xl font-bold text-white mb-6">Contact</h2>
-          <p className="text-[#A1A1AA] max-w-xl mb-10">Hiring for an SDE, data analyst or ML/AI role? I would like to hear about it.</p>
+          <p className="text-[#A1A1AA] max-w-xl mb-10">
+            Hiring for an SDE, data analyst or ML/AI role? I would like to hear about it.
+          </p>
           <div className="grid md:grid-cols-3 gap-5 font-mono text-xs">
             {CONTACTS.map(({ href, Icon, label }) => (
-              <a key={label} href={href} target={label === "Email" ? undefined : "_blank"} rel="noreferrer"
-                 className={`${GLASS} p-5 rounded-2xl text-white hover:border-[#00F0FF] hover:text-[#00F0FF] flex items-center gap-3.5 transition-all`}>
+              <a
+                key={label}
+                href={href}
+                target={label === "Email" ? undefined : "_blank"}
+                rel="noreferrer"
+                className={`${GLASS} p-5 rounded-2xl text-white hover:border-[#00F0FF] hover:text-[#00F0FF] flex items-center gap-3.5 transition-all`}
+              >
                 <Icon className="w-4 h-4 text-[#00F0FF]" /> <span>{label}</span>
               </a>
             ))}
