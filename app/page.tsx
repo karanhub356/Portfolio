@@ -46,6 +46,16 @@ const PROJECTS = [
     url: "https://github.com/karanhub356/ensemble_AI-crop",
   },
   {
+    kind: "OOP + SQL",
+    badge: "SQLITE",
+    color: "#38BDF8",
+    metric: "Strategy Pattern · Normalized CTEs",
+    title: "Fleet Service Management System",
+    desc: "Models vehicle service lifecycles with abstract base classes, inheritance and a Strategy pattern for service-tier pricing. Normalized SQLite schema with CTE queries for overdue vehicles and technician workload.",
+    stack: ["Python", "SQLite", "Design Patterns"],
+    url: "https://github.com/karanhub356/fleet-service-management",
+  },
+  {
     kind: "WEB APP",
     badge: "REACT",
     color: "#00F0FF",
