@@ -36,15 +36,15 @@ const PROJECTS = [
     url: "https://github.com/karanhub356/ai-resume-screener",
   },
   {
-    kind: "ML RESEARCH",
-    badge: "ICCET 2026",
-    color: "#A855F7",
-    metric: "6 Models · 2,200 Samples · DiCE XAI",
-    title: "Crop Recommendation with Explainable AI",
-    desc: "Compares six ML models with GridSearchCV and cross-validation (Random Forest performs best) on 2,200 samples and 7 soil and climate features. Returns Top-3 crops and uses DiCE counterfactuals to show what would change the ranking.",
-    stack: ["Python", "scikit-learn", "DiCE", "XAI"],
-    url: "https://github.com/karanhub356/ensemble_AI-crop",
-  },
+  kind: "ML / EXPLAINABLE AI",
+  badge: "DICE XAI",
+  color: "#A855F7",
+  metric: "6 Models · 2,200 Samples · DiCE XAI",
+  title: "Crop Recommendation with Explainable AI",
+  desc: "Compares six ML models with GridSearchCV and cross-validation (Random Forest performs best) on 2,200 samples and 7 soil and climate features. Returns Top-3 crops and uses DiCE counterfactuals to show what would change the ranking.",
+  stack: ["Python", "scikit-learn", "DiCE", "XAI"],
+  url: "https://github.com/karanhub356/ensemble_AI-crop",
+},
   {
     kind: "OOP + SQL",
     badge: "SQLITE",
@@ -96,8 +96,8 @@ const TIMELINE = [
   {
     when: "2026",
     color: "#00F0FF",
-    title: "B.Tech Graduate & ICCET 2026 Paper",
-    body: "Graduated in AI & Data Science. Paper on a crop recommendation framework at ICCET 2026. Completed Google Cloud Gen AI Leader and Anthropic MCP credentials.",
+    title: "B.Tech Graduate & Cloud AI Credentials",
+    body: "Graduated in AI & Data Science. Built explainable ML and NLP pipelines alongside Google Cloud Gen AI Leader and Anthropic MCP certifications.",
   },
   {
     when: "Jun – Jul 2024",
@@ -130,14 +130,14 @@ const TERMINAL_TABS = [
     ],
   },
   {
-    cmd: "explain --crop-xai",
-    output: [
-      { label: "PUBLICATION", val: "ICCET 2026 Accepted Research Paper" },
-      { label: "BENCHMARK", val: "6 ML models tuned via GridSearchCV (2,200 samples)" },
-      { label: "WINNER", val: "Random Forest + DiCE Counterfactual Explanations" },
-      { label: "IMPACT", val: "Shows exact soil/climate deltas needed to flip top crop" },
-    ],
-  },
+  cmd: "explain --crop-xai",
+  output: [
+    { label: "PROBLEM", val: "Multi-class crop suitability across 7 soil & climate features" },
+    { label: "BENCHMARK", val: "6 ML models tuned via GridSearchCV (2,200 samples)" },
+    { label: "WINNER", val: "Random Forest + DiCE Counterfactual Explanations" },
+    { label: "IMPACT", val: "Shows exact soil/climate deltas needed to flip top crop" },
+  ],
+},
   {
     cmd: "cat credentials.json",
     output: [
@@ -480,7 +480,7 @@ export default function Portfolio() {
               </p>
               <p>
                 Alongside ML, I work on the engineering side: object-oriented design with design patterns, normalized
-                SQL schemas, and React front ends. My crop recommendation paper was presented at ICCET 2026.
+                SQL schemas, and React front ends—focusing on systems that are transparent, testable, and maintainable.
               </p>
 
               <div className="pt-4 grid sm:grid-cols-2 gap-4">
@@ -513,7 +513,7 @@ export default function Portfolio() {
                 {[
                   ["Name", "Karan M"],
                   ["Education", "B.Tech AI & Data Science, SKCET (2026)"],
-                  ["Research", "ICCET 2026 Published Paper"],
+                  ["Core Focus", "Explainable ML (XAI), NLP & Backend Systems"],
                   ["Credentials", "Google Cloud Gen AI Leader · Anthropic MCP"],
                 ].map(([k, v]) => (
                   <div key={k}>
