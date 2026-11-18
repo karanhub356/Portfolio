@@ -663,8 +663,21 @@ export default function Portfolio() {
         </section>
       </main>
 
-      <footer className="border-t border-white/10 py-8 text-center font-mono text-xs text-[#8B8B98] relative z-10">
-        <p>© 2026 Karan M · Built with Next.js & Tailwind CSS</p>
+      <footer className="border-t border-white/10 py-8 relative z-10 font-mono text-xs text-[#71717A]">
+        <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p>© 2026 Karan M</p>
+          <div className="flex items-center gap-6">
+            <a href={LINKS.github} target="_blank" rel="noreferrer" className="hover:text-[#00F0FF] transition-colors">
+              GitHub
+            </a>
+            <a href={`mailto:${LINKS.email}`} className="hover:text-[#00F0FF] transition-colors">
+              Email
+            </a>
+            <a href="#hero" className="text-[#94A3B8] hover:text-white transition-colors">
+              Back to top ↑
+            </a>
+          </div>
+        </div>
       </footer>
     </div>
   );
