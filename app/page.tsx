@@ -123,7 +123,7 @@ const TERMINAL_TABS = [
   {
     cmd: "whoami",
     output: [
-      { label: "ENGINEER", val: "Karan M · B.Tech AI & Data Science (SKCET '26)" },
+      { label: "ENGINEER", val: "Karan M · B.Tech AI & Data Science " },
       { label: "LOCATION", val: "Coimbatore, Tamil Nadu, India" },
       { label: "FOCUS", val: "Explainable ML (XAI), NLP Pipelines & Clean Backend Systems" },
       { label: "STATUS", val: "Ready for SDE, Data Analyst & ML/AI roles" },
